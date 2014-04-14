@@ -16,17 +16,17 @@ public class ContactHelper extends HelperBase {
 
 	public ContactData getFirstContact() {
 		manager.getAutoItHelper()
-			.winWaitAndActivate("AdressBook Portable", "", 5000)
+			.winWaitAndActivate("AddressBook Portable", "", 1000)
 			.click("TListView1")
 			.send("{DOWN}{SPACE}")
 			.click("Edit")
-			.winWaitAndActivate("Update Contact", "", 5000);
+			.winWaitAndActivate("Update Contact", "", 1000);
 		ContactData contact = new ContactData()
 			.withFirstName(manager.getAutoItHelper().getText("TDBEdit12"))
 			.withLastName(manager.getAutoItHelper().getText("TDBEdit11"));
 		manager.getAutoItHelper()
 			.click("Cancel")
-			.winWaitAndActivate("AdressBook Portable", "", 5000);
+			.winWaitAndActivate("AddressBook Portable", "", 1000);
 		return contact;
 	}
 	
@@ -34,9 +34,9 @@ public class ContactHelper extends HelperBase {
 	
 	private void initContactCreation() {
 		manager.getAutoItHelper()
-			.winWaitAndActivate("AdressBook Portable", "", 5000)
+			.winWaitAndActivate("AddressBook Portable", "", 1000)
 			.click("Add")
-			.winWaitAndActivate("AddContact", "", 5000);
+			.winWaitAndActivate("Add Contact", "", 1000);
 	}
 	
 	private void fillContactForm(ContactData contact) {
@@ -48,7 +48,7 @@ public class ContactHelper extends HelperBase {
 	private void submitContactCreation() {
 		manager.getAutoItHelper()
 			.click("Save")
-			.winWaitAndActivate("AdressBook Portable", "", 5000);
+			.winWaitAndActivate("AddressBook Portable", "", 1000);
 	}	
 
 }
